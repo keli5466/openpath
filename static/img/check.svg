@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="25px" viewBox="0 0 30 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Products-(Access-Control)" transform="translate(-964.000000, -3192.000000)" fill="#F96715" fill-rule="nonzero">
+            <g id="Feature-Comparison" transform="translate(51.000000, 3121.000000)">
+                <g id="comparison-row" transform="translate(0.000000, 59.000000)">
+                    <path d="M942.375266,12.8022978 C942.260336,12.8240908 942.152815,12.8865081 942.074382,12.9769209 C936.214116,19.3820975 928.496102,28.495704 922.600543,34.9619567 L913.891641,28.0120119 C913.67263,27.7974908 913.276138,27.8342595 913.096753,28.0857727 C912.917368,28.3372859 912.99702,28.7447026 913.256443,28.9025619 L922.349807,36.1668843 C922.557997,36.3237377 922.875761,36.29211 923.051868,36.097035 C929.008936,29.5861346 936.913577,20.2263794 942.843306,13.7452627 C943.216273,13.1790926 942.868554,12.7653056 942.375266,12.8022978 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

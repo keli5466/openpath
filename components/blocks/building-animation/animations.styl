@@ -1,0 +1,110 @@
+// ANIMATIONS
+.building-0, .building-1
+	transform translate(100%, -50%)
+	transform-origin top right
+	transition transform 1000ms ease-in-out,
+						 opacity 1000ms ease-in-out
+
+	.grey-bar
+		opacity 1
+		transition opacity 300ms ease-in-out
+
+	&.reset
+		opacity 0
+		transform translate(100%, -50%)
+
+	&.init
+		transform translate(0, -50%)
+		@media (max-width mobile)
+			transform translate(40%, -50%)
+
+		.lock
+			transform translateY(0)
+			opacity 1
+
+	&.step-1
+		.door
+			opacity 1
+
+		.lock
+			transform translateY(0)
+			opacity 1
+
+		.locked
+			animation toggleOut 200ms forwards
+		.unlocked
+			animation toggleLock 400ms forwards
+
+		.lock-0
+			.locked
+				animation-delay 0ms
+			.unlocked
+				animation-delay 200ms
+		.lock-1
+			.locked
+				animation-delay 400ms
+			.unlocked
+				animation-delay 600ms
+		.lock-2
+			.locked
+				animation-delay 800ms
+			.unlocked
+				animation-delay 1000ms
+		.lock-3
+			.locked
+				animation-delay 1200ms
+			.unlocked
+				animation-delay 1400ms
+
+	&.step-3
+		transform scale(0.3) translate(-20%, -200%)
+		opacity 0
+
+		.grey-bar
+			opacity 0
+
+.building-1
+	&.init, &.step-1, &.step-2
+		transform translate(-40px, -50%)
+		@media (max-width mobile)
+			transform translate(40%, -50%)
+
+	&.step-3
+		transform scale(0.3) translate(-20%, -200%)
+
+.building-2
+	transform translate(100%, -50%)
+	opacity 0
+	transform-origin top right
+	transition transform 1000ms ease-in-out,
+						 opacity 1000ms ease-in-out,
+						 top 1000ms ease-in-out
+
+	.lock-0
+		transition-delay 1200ms
+	.lock-1
+		transition-delay 1500ms
+	.lock-2
+		transition-delay 1800ms
+	.lock-3
+		transition-delay 2100ms
+	.lock-4
+		transition-delay 2400ms
+	.lock-5
+		transition-delay 2700ms
+	.lock-6
+		transition-delay 3000ms
+	.lock-7
+		transition-delay 3300ms
+
+	&.reset
+		opacity 0
+		transform translate(100%, -50%)
+
+	&.init
+		transform translate(0, -50%)
+		opacity 1
+
+		.lock
+			transform translate(0, 0)
+			opacity 1

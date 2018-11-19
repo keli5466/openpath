@@ -1,0 +1,194 @@
+/**
+ * This partial is @import-ed automatically at the top of every styl file
+ * who is required from a JS file by a webpack loader.  It should not contain
+ * any styles because they would be repeated in every instance of the import.
+ * It should only contain variable and mixin definitions.
+ */
+
+/*******************************************************************************
+ * Vars
+ */
+
+inner-wrapper = 80px
+mobile-inner-wrapper = 12.5vw
+header-height = 105px
+header-height-mobile = 80px
+block-spacing = 45px
+block-v-spacing = 60px
+desktop = 1368px
+tablet-landscape = 1024px
+tablet = 900px
+mobile-landscape = 580px
+mobile = 500px
+open-sans = 'Open Sans', sans-serif
+sub-section-header = 585px
+home-block-height = 750px
+
+// Colors
+primary = #f96715
+secondary-text = #898e97
+dark-text = #221e20
+offwhite = #f8f8f8
+primary-text = #424242
+table-border = #eeeeee
+dark-secondary-text = #4c4f55
+yellow = #fac922
+dark-grey = #898e97
+blue = #b9ced2
+light-grey = #c8c8c8
+
+// Whitespace
+v-pad = rem(40px)
+v-pad-mobile = rem(25px)
+gutter = rem(50px)
+gutter-mobile = rem(30px)
+
+// Transitions
+smooth-in = cubic-bezier(.19,1,.22,1)
+smooth-out = cubic-bezier(.55,.04,.95,.41)
+smooth-in-out = cubic-bezier(.8,0,.2,1)
+
+// Typography
+body-font-size = 20px
+
+// Layout
+max-w = 1400px
+header-h-desktop = rem(150px)
+header-h-desktop-short = rem(50px)
+header-h-mobile = 60px
+header-h-mobile-open = 130px
+header-z = 10
+
+// Icomoon `content` values
+@require '~assets/fonts/icomoon/variables.styl'
+
+/*******************************************************************************
+ * Mixins
+ */
+
+// Mixins must be relative to `resolve.root` (the "~") since this module may be
+// included at any folder depth. Globing is not possible here because the glob-er
+// doesn't work within @import-ed files.
+
+// The Bukwild shared stylus library
+support-for-ie = false
+@require '~bukwild-stylus-library';
+
+// Mixin for inner wrapper for elements that need to be aligned
+inner-wrapper()
+	padding-left rem(89px)
+	padding-right rem(89px)
+	@media (max-width tablet)
+		padding-left 6vw
+		padding-right 6vw
+
+// Testing out which one works best for the elements that already use it so they can be universal
+inner-gutter()
+	padding-left rem(100px)
+	padding-right rem(100px)
+	width 100%
+	@media (max-width tablet-landscape)
+		padding-left 6vw
+		padding-right 6vw
+
+block-wrapper()
+	margin-left rem(89px)
+	margin-right rem(70px)
+	@media (max-width tablet)
+		margin-left 6.5vw
+		margin-right 6vw
+// Font helper
+// @require '~utils/typography.styl';
+
+/**
+ * Use rems for font-size unless the font is less than 14px
+ *
+ * @param {px}      size
+ * @param {boolean} lieral If true, don't do the rem conversion
+ */
+font-size(size, literal = false)
+	if literal or size <= 14px
+		font-size size
+	else
+		font-size rem(size)
+
+/**
+ * Simple font declaraations
+ *
+ * @param  {string} style
+ * @param  {unit}   size   Font size, will be rem-ed automatically
+ * @param  {color}  color
+ */
+font(style, size = null, color = null)
+
+	// Fonts
+	if style == 'regular'
+		font-family Assistant
+		font-weight normal
+		font-style normal
+
+	if style == 'open-sans'
+		font-family open-sans
+	// Icomoon
+	else if style == 'icon'
+		font-family 'icomoon' !important;
+		speak none
+		font-style normal
+		font-weight normal
+		font-variant normal
+		text-transform none
+		line-height 1
+
+	// Add font size using the rem value of what was passed in
+	font-size size if size
+
+	// Add font color
+	color color if color
+
+/**
+ * Helper for implementing icons
+ *
+ * @param  {string} name   The name of the icon
+ * @param  {unit}   size   Font size, will be rem-ed automatically
+ * @param  {color}  color
+ */
+icon(name, size = null, color = null)
+	font 'icon', size, color
+	content lookup('icon-' + name)
+
+cta()
+	button()
+	position relative
+	border 1px solid primary
+	border-radius 3px
+	font-weight 600
+	font 'Assistant', 14px, dark-text
+	letter-spacing rem(0.5px)
+	text-transform uppercase
+	padding rem(17px) rem(62px)
+	text-align center
+	background white
+	transition all 300ms ease-in-out
+	margin-top rem(92px)
+	&:hover
+		background primary
+		color white
+
+cta-inverse()
+	button()
+	font 'Assistant' , 14px, white
+	font-weight 600
+	position relative
+	letter-spacing 0.5px
+	text-align center
+	border-radius 3px
+	width rem(210px)
+	padding rem(16px) 0
+	background primary
+	transition all 300ms ease-in-out
+	text-transform uppercase
+	border 1px solid primary
+	&:hover
+		background white
+		color dark-text
+		border 1px solid primary

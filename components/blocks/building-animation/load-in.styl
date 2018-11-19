@@ -1,0 +1,40 @@
+// IN VIEWPORT BUILD-IN
+.building-animation
+	overflow hidden
+
+.headline
+	transition opacity 300ms ease-in-out
+
+.subhead
+	transition opacity 300ms ease-in-out,
+						 transform 300ms ease-in-out
+
+.building-manager
+	transition opacity 300ms ease-in-out,
+						 transform 300ms ease-in-out
+
+.title
+	transition opacity 300ms ease-in-out,
+						 transform 300ms ease-in-out
+
+.building
+	transition transform 750ms ease-in-out
+
+
+// TRANSITIONS
+.headline:not(.in-viewport)
+	opacity 0
+
+.subhead:not(.in-viewport)
+	opacity 0
+
+.building-manager:not(.in-viewport)
+	opacity 0
+	transform translateX(-20px)
+
+.title:not(.in-viewport)
+	opacity 0
+	transform translateX(20px)
+
+.building:not(.in-viewport)
+	transform translate(100%, -50%)

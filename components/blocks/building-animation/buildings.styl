@@ -1,0 +1,333 @@
+.buildings
+	position absolute
+	left 0
+	top 0
+	height 100%
+	width 100%
+	justify-content flex-end
+	overflow hidden
+
+.grey-bar
+	position absolute
+	bottom 0
+	left 0
+	background #fafafa
+	height 100%
+	width 100%
+
+.lock
+	transform translateY(20px)
+	opacity 0
+	position absolute
+	width 40px
+	height @width
+	transition transform 1000ms ease-in-out,
+						 opacity 1000ms ease-in-out
+
+	@media (max-width mobile)
+		width auto
+		height auto
+
+	.locked, .unlocked
+		position absolute
+		top 0
+		left 0
+		width 40px
+		height @width
+		transition opacity 1000ms ease-in-out
+
+		@media (max-width mobile)
+			width 20px
+			height auto
+
+	.locked
+		opacity 1
+
+	.unlocked
+		opacity 0
+
+.doors
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+
+.door
+	position absolute
+	opacity 0
+	background rgba(green, 0.4)
+	transition opacity 600ms ease-in-out
+
+>>> .building .vv-slot
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+
+.building
+	v-center()
+	width 100%
+	z-index 1
+
+.building-0
+	width 85%
+	top 53%
+	right 0
+
+	.grey-bar
+		transform translateY(79.4%)
+
+	.small-pin
+		display none
+
+	.door-0
+		width 2.7%
+		height 10.2%
+		bottom 40.9%
+		left 37.7%
+		transition-delay 0ms
+		@media (max-width mobile)
+			width 3.5%
+			height 7.4%
+			bottom 43.1%
+			left 17.3%
+
+	.door-1
+		width 2.7%
+		height 10.2%
+		bottom 40.9%
+		right 16.8%
+		transition-delay 400ms
+
+	.door-2
+		width 9.1%
+		height 13.2%
+		bottom 20.5%
+		right 34.9%
+		transition-delay 800ms
+		@media (max-width mobile)
+			width 12%
+			height 9.7%
+			bottom 27.8%
+			right 46.6%
+
+	.door-3
+		width 5.3%
+		height 13.7%
+		bottom 0
+		right 36.7%
+		transition-delay 1200ms
+		@media (max-width mobile)
+			width 6.5%
+			height 9.8%
+			bottom 12.8%
+			right 49.1%
+
+	.lock-0
+		bottom 48%
+		left 39%
+		@media (max-width mobile)
+			bottom 54%
+			left 19%
+
+	.lock-1
+		bottom 48%
+		right 14%
+
+	.lock-2
+		bottom 31%
+		left 64%
+		@media (max-width mobile)
+			bottom 41%
+			left 51%
+
+	.lock-3
+		bottom 11%
+		left 62%
+		@media (max-width mobile)
+			bottom 26%
+			left 48%
+
+.building-1
+	width 85%
+	top 55%
+	right 0
+
+	.grey-bar
+		transform translateY(81.9%)
+
+	.small-pin
+		display none
+
+	.door-0
+		transition-delay 0ms
+		width 2.9%
+		height 10.6%
+		bottom 61.6%
+		left 49.9%
+		@media (max-width mobile)
+			width 3.9%
+			height 7.9%
+			bottom 58.8%
+			left 32.7%
+
+	.door-1
+		transition-delay 400ms
+		width 3%
+		height 10.5%
+		bottom 61.6%
+		right 7.8%
+
+	.door-2
+		transition-delay 800ms
+		width 5.5%
+		height 14.4%
+		bottom 17.8%
+		left 40.2%
+		@media (max-width mobile)
+			width 7.3%
+			height 10.7%
+			bottom 25.8%
+			left 19.7%
+
+	.door-3
+		transition-delay 1200ms
+		width 20%
+		height 14%
+		bottom 17.9%
+		right 25.7%
+		@media (max-width mobile)
+			width 26.3%
+			height 10.7%
+			bottom 25.8%
+			left 38.7%
+
+	.lock-0
+		top 23%
+		left 51.5%
+		@media (max-width mobile)
+			top 29%
+			left 35%
+
+	.lock-1
+		top 23%
+		right 5.5%
+
+	.lock-2
+		bottom 30%
+		left 44%
+		@media (max-width mobile)
+			bottom 40%
+			left 24%
+
+	.lock-3
+		bottom 30%
+		right 24%
+		@media (max-width mobile)
+			bottom 40%
+			right 44%
+
+>>> .building-2 .building-image
+	overflow visible
+
+.building-2
+	width 60%
+	height 50%
+	right 0
+
+	@media (max-width mobile)
+		width 90%
+		height 90%
+
+	.grey-bar
+		display none
+
+	.lock
+		transform translateY(-10px)
+
+	.locked, .unlocked
+		display none !important
+
+	.lock-0
+		transform translate(200px, -100px)
+		top 18%
+		right 85.2%
+		width 20%
+		height auto
+		aspect-ratio(150/55)
+		@media (max-width mobile)
+			top 32%
+			right 85%
+
+	.lock-1
+		transform translate(200px, -140px)
+		top 27.5%
+		right 55%
+		width 19%
+		height auto
+		aspect-ratio(150/55)
+		@media (max-width mobile)
+			top 37%
+			right 55%
+
+	.lock-2
+		top 55%
+		left 33%
+		aspect-ratio(75/40)
+		width 12%
+		height auto
+		@media (max-width mobile)
+			top 50%
+			left 33%
+
+	.lock-3
+		top 12%
+		left 45%
+		aspect-ratio(63/40)
+		width 9%
+		height auto
+		@media (max-width mobile)
+			top 29%
+			left 49%
+
+	.lock-4
+		top 29%
+		left 59%
+		aspect-ratio(75/40)
+		width 12%
+		height auto
+		@media (max-width mobile)
+			top 37%
+			left 58%
+
+	.lock-5
+		top 21%
+		left 81%
+		aspect-ratio(53/40)
+		width 8%
+		height auto
+		@media (max-width mobile)
+			top 33%
+			left 81%
+
+	.lock-6
+		top 28%
+		left 76%
+		aspect-ratio(82/40)
+		width 13%
+		height auto
+		@media (max-width mobile)
+			top 36%
+			left 75%
+
+	.lock-7
+		top 60%
+		left 85%
+		aspect-ratio(58/40)
+		width 9%
+		height auto
+		@media (max-width mobile)
+			top 55%
+			left 85%

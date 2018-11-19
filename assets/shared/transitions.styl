@@ -1,0 +1,59 @@
+// Default page transition
+.page-enter-active, .page-leave-active
+	transition opacity .5s
+.page-enter, .page-leave-to
+	opacity 0
+
+// Standard fade in/out
+.fade-enter-active, .fade-leave-active
+	transition opacity .5s
+.fade-enter, .fade-leave-to
+	opacity 0
+
+// Grows DROPDOWN
+.grow-in-down-enter-active, .grow-in-down-leave-active
+	transform scaleY(1)
+	transform-origin top
+	overflow hidden
+	transition transform 400ms ease-out-quart,
+				opacity 400ms ease-out-quart
+
+.grow-in-down-enter, .grow-in-down-leave-to, .grow-in-down-leave-active
+	opacity 0
+	transform scaleY(.9)
+
+
+// Slide in from top
+.slide-in-down-enter-active, .slide-in-down-leave-active
+	transition all 300ms ease-in-out,
+				opacity 300ms ease-in-out
+	height 100%
+
+
+.slide-in-down-enter, .slide-in-down-leave-to, .slide-in-down-leave-active
+	opacity 0
+	height 0
+
+.fade-in-down-enter-active, .fade-in-down-leave-active
+	transition opacity 400ms ease-out-quart ,
+						 transform 400ms ease-out-quart
+
+.fade-in-down-enter, .fade-in-down-leave-to, .fade-in-down-leave-active
+	transform translateY(-150px)
+	opacity 0
+
+// Slide in from right
+.slide-in-right-enter-active, .slide-in-right-leave-active
+	transition transform 300ms ease-in-out,
+						opacity 300ms ease-in-out
+.slide-in-right-enter, .slide-in-right-leave-to, .slide-in-right-leave-active
+	transform translateX(-100%)
+
+// Quote fade transition
+.quote-fade-enter-active, .quote-fade-leave-active
+	top 0
+	width 100%
+	position absolute
+	transition opacity .5s
+.quote-fade-enter, .quote-fade-leave-to
+	opacity 0
